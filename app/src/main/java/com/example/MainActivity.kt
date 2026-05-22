@@ -30,6 +30,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
@@ -493,7 +494,8 @@ fun MainContentScreen(
                                     contentAlignment = Alignment.Center
                                 ) {
                                     // Sun/Moon dynamic organic glowing halo pulsing backdrop wrapper
-                                    val rippleScale by rememberInfiniteTransition(label = "haloScale").animateFloat(
+                                    val infiniteTransition = rememberInfiniteTransition(label = "haloScale")
+                                    val rippleScaleState = infiniteTransition.animateFloat(
                                         initialValue = 1.0f,
                                         targetValue = 1.15f,
                                         animationSpec = infiniteRepeatable(
@@ -508,7 +510,10 @@ fun MainContentScreen(
                                     Box(
                                         modifier = Modifier
                                             .fillMaxSize()
-                                            .scale(rippleScale)
+                                            .graphicsLayer {
+                                                scaleX = rippleScaleState.value
+                                                scaleY = rippleScaleState.value
+                                            }
                                             .background(
                                                 Brush.radialGradient(
                                                     colors = listOf(centerPulseColor, outerPulseColor, Color.Transparent),
