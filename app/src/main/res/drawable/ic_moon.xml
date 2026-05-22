@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Waning Gibbous Moon (Luminous Lunar Cream Glow) -->
+    <path
+        android:fillColor="#FFFBE0"
+        android:pathData="M57.5,20 A30,30 0,0,0 57.5,80 A15,30 0,0,0 57.5,20" />
+</vector>
