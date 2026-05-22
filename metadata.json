@@ -1,0 +1,6 @@
+{
+  "name": "Dark?",
+  "description": "A dynamic single-screen utility that shows whether it is dark or daylight outside based on your location or system timezone, with real-time sunrise/sunset timings and simulated state previewing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
